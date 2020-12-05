@@ -4,6 +4,8 @@ import LocationInfo from './LocationInfo'
 import { useState } from 'react'
 const Map = ({ center, zoom, eventData }) => {
   const [locationInfo, setLocationInfo] = useState(null)
+  //MAP_API_KEY needs to be obtained from google console before running this code
+  let MAP_API_KEY=''
   const markers = eventData.map((event) => {
     console.log(
       event.categories[0].id,
@@ -25,7 +27,7 @@ const Map = ({ center, zoom, eventData }) => {
   return (
     <div className='map'>
       <GoogleReactMap
-        bootstrapURLKeys={{ key: 'AIzaSyC0YH2QQ16_ViMT8GPeZiRnrT6ndkMzSTE' }}
+        bootstrapURLKeys={{ key: 'MAP_API_KEY' }}
         defaultCenter={center}
         defaultZoom={zoom}
       >
